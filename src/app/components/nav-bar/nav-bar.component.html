@@ -154,9 +154,15 @@
 
       <button
         class="btn btn-bd-login d-lg-inline-block my-2 my-md-0 ms-md-3 bg-warning text-white"
-        (click)="login()"
-        >
-        Login
+        (click)="login()" *ngIf="!isLogged"
+      >
+        Editar
+      </button>
+      <button
+        class="btn btn-bd-login d-lg-inline-block my-2 my-md-0 ms-md-3 bg-danger text-white"
+        (click)="onLogOut()" *ngIf="isLogged"
+      >
+        Terminar
       </button>
     </div>
   </nav>
