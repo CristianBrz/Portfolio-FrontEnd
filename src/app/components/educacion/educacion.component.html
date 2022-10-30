@@ -2,40 +2,47 @@
   <div class="">
     <ul class="list-group">
       <li class="row p-3">
-        <h4 class="col-xl-10 col-8 pt-3">Educación</h4>
-        <button type="button" class="btn btn-outline-dark col-xl-2 col-4">
-          Agregar educación
+        <h4 class="col-xl-10 col-8 pt-3"><u>Educacion</u></h4>
+        <button
+          type="button"
+          class="btn btn-outline-dark col-xl-2 col-4"
+          routerLink="/nuevaedu"
+          *ngIf="isLogged"
+        >
+          Agregar Educacion
         </button>
       </li>
 
-      <li class="list-group-item ps-1">
-        <h4>Puesto</h4>
-        <h5 class="text-muted">fecha</h5>
-        <a href="">empresa</a>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut ullam ut
-          debitis doloremque nam, sint aliquam asperiores dolorum aperiam hic.
-        </p>
-      </li>
+      <li class="list-group-item p-3" *ngFor="let Educacion of educacion">
+        <h4>{{ Educacion.nombreEdu }}</h4>
+        <h5 class="text-muted">{{ Educacion.fechaEdu }}</h5>
+        <h6>{{ Educacion.lugarEdu }}</h6>
+        <p>{{ Educacion.descripcionEdu }}</p>
 
-      <li class="list-group-item ps-1">
-        <h4>Puesto</h4>
-        <h5 class="text-muted">fecha</h5>
-        <a href="">empresa</a>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut ullam ut
-          debitis doloremque nam, sint aliquam asperiores dolorum aperiam hic.
-        </p>
-      </li>
+        <div
+          class="btn-group btn-group-sm"
+          role="group"
+          aria-label="Basic outlined example"
+					*ngIf="isLogged"
+        >
+          <button
+            type="button"
+            class="btn btn-outline-success p-1"
+						routerLink="/editedu/{{Educacion.id}}"
+          >
+            <i class="bi bi-pencil-square"></i>
+            Editar
+          </button>
 
-      <li class="list-group-item ps-1">
-        <h4>Puesto</h4>
-        <h5 class="text-muted">fecha</h5>
-        <a href="">empresa</a>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut ullam ut
-          debitis doloremque nam, sint aliquam asperiores dolorum aperiam hic.
-        </p>
+          <button
+            type="button"
+            class="btn btn-outline-danger p-1"
+						(click)="delete(Educacion.id)"
+          >
+            <i class="bi bi-x-square"></i>
+            Borrar
+          </button>
+        </div>
       </li>
     </ul>
   </div>

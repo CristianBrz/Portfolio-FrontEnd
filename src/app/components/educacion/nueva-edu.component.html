@@ -1,0 +1,64 @@
+<div class="m-5">
+    <h1>Nueva educacion</h1>
+  
+    <form (ngSubmit)="onCreate()" novalidate #form="ngForm">
+      
+      <!-- puesto -->
+      <div class="mb-3">
+        <label for="nombreExp" class="form-label">Titulo</label>
+        <input
+          type="text"
+          class="form-control "
+          id="nombreExp"
+          name="nombreExp"
+          [(ngModel)]="nombreEdu"
+          required
+          placeholder="Puesto ocupado"
+        />
+      </div>
+  
+      <!-- Empresa -->
+      <div class="mb-3">
+        <label for="lugarExp" class="form-label">Nombre de la institucion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lugarExp"
+          name="lugarExp"
+          [(ngModel)]="lugarEdu"
+          required
+          placeholder="Institucion"
+        />
+      </div>
+  
+      <!-- Fecha -->
+      <div class="mb-3">
+        <label for="fechaExp" class="form-label">Fecha Ingreso - Egreso</label>
+        <input
+          ttype="text"
+          class="form-control"
+          id="fechaExp"
+          name="fechaExp"
+          [(ngModel)]="fechaEdu"
+          required
+          placeholder="mm-aaaa / mm-aaaa"
+        />
+      </div>
+  
+      <div class="mb-3">
+        <label for="descripcionExp" class="form-label">Desciption</label>
+        <textarea
+          class="form-control"
+          id="descripcionExp"
+          name="descripcionExp"
+          [(ngModel)]="descripcionEdu"
+          required
+          rows="3"
+          placeholder="Desciption de tareas realizadas"
+        ></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Agregar educacion</button>
+    </form>
+  </div>
+  
