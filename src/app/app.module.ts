@@ -11,8 +11,6 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EducacionComponent } from './components/educacion/educacion.component';
 // Import ng-circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { HardSkillsComponent } from './components/hard-skills/hard-skills.component';
-import { SoftSkillsComponent } from './components/soft-skills/soft-skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,6 +20,11 @@ import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
 import { NuevaExpComponent } from './components/experiencia/nueva-exp.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NuevaEduComponent } from './components/educacion/nueva-edu.component';
+import { EditarEduComponent } from './components/educacion/editar-edu.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { NuevaSkillComponent } from './components/skills/nueva-skill.component';
+import { EditarSkillComponent } from './components/skills/editar-skill.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +35,17 @@ import { EditExperienciaComponent } from './components/experiencia/edit-experien
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
-    HardSkillsComponent,
-    SoftSkillsComponent,
     ProyectosComponent,
     FooterComponent,
     LoginComponent,
     PortfolioComponent,
     NuevaExpComponent,
     EditExperienciaComponent,
+    NuevaEduComponent,
+    EditarEduComponent,
+    SkillsComponent,
+    NuevaSkillComponent,
+    EditarSkillComponent,
   ],
   imports: [
     BrowserModule,

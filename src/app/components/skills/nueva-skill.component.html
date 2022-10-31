@@ -1,0 +1,35 @@
+<div class="m-5">
+  <h1>Nueva Skill</h1>
+
+  <form (ngSubmit)="onCreate()" novalidate #form="ngForm">
+
+
+    <div class="mb-3">
+      <label for="nombreSkill" class="form-label">Nueva Skill</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombreSkill"
+        name="nombreSkill"
+        [(ngModel)]="nombreSkill"
+        required
+        placeholder="Nueva Skill"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="progresoSkill" class="form-label">Preogreso</label>
+      <input
+        type="number"
+        class="form-control"
+        id="progresoSkill"
+        name="progresoSkill"
+        [(ngModel)]="progresoSkill"
+        required
+        placeholder="0 a 100%"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success">Agregar Skil</button>
+  </form>
+</div>

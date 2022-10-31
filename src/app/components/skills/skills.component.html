@@ -1,0 +1,64 @@
+<div class="row p-5">
+  <div class="row p-3">
+    <h4 class="col-xl-10 col-8 pt-3"><u>Hard & Soft Skills</u></h4>
+    <button
+      type="button"
+      class="btn btn-outline-dark col-xl-2 col-4"
+      routerLink="/nuevaskill"
+      *ngIf="isLogged"
+    >
+      Agregar Skill
+    </button>
+  </div>
+
+  <div class="justify-content-center col-sm-3 col-md-3 col-lg-3" *ngFor="let skill of skill">
+    <circle-progress 
+    [percent]="(skill.progresoSkill)"
+    [maxPercent]="100"
+    [radius]="90" [imageSrc]="''" 
+    [title]="(skill.nombreSkill)" 
+    [titleColor]="'#212F3C'"
+    [showTitle]="true" 
+    [showImage]="false" 
+    [imageHeight]="70" 
+    [imageWidth]="70" 
+    [showUnits]="false"
+    [showSubtitle]="false" 
+    [outerStrokeWidth]="16" 
+    [innerStrokeWidth]="2" 
+    [outerStrokeColor]="'#78C000'"
+    [innerStrokeColor]="'#C7E596'" 
+    [animation]="true" 
+    [animationDuration]="600">
+    </circle-progress>
+
+    <div
+    class="btn-group btn-group-sm"
+    role="group"
+    aria-label="Basic outlined example"
+    *ngIf="isLogged"
+  >
+    <button
+      type="button"
+      class="btn btn-outline-success p-1"
+      routerLink="/editskill/{{ skill.id }}"
+    >
+      <i class="bi bi-pencil-square"></i>
+      Editar
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-outline-danger p-1"
+      (click)="delete(skill.id)"
+    >
+      <i class="bi bi-x-square"></i>
+      Borrar
+    </button>
+  </div>
+
+
+  </div>
+
+
+</div>
