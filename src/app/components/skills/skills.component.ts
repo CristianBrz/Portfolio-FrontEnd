@@ -6,14 +6,16 @@ import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
-
   skill: Skill[] = [];
 
-  constructor(private skillService: SkillServService, private tokenService: TokenService) { }
-  
+  constructor(
+    private skillService: SkillServService,
+    private tokenService: TokenService
+  ) {}
+
   isLogged = false;
 
   ngOnInit(): void {
@@ -26,22 +28,23 @@ export class SkillsComponent implements OnInit {
   }
 
   cargarSkills(): void {
-    this.skillService.lista().subscribe(
-      data => {
-        this.skill = data;
+    this.skillService.lista().subscribe((data) => {
+      this.skill = data;
+      console.log(this.skill);
     });
   }
 
-  delete(id?: number){
-    if(id != undefined){
+  delete(id: number) {
+    if (id != undefined) {
       this.skillService.delete(id).subscribe(
-        data => {
+        (data) => {
           this.cargarSkills();
-        }, err => {
-          alert("No se pudo borrar la skill");
+          // alert('Skill eliminada');
+        },
+        (err) => {
+          alert('No se pudo borrar la skill');
         }
-      )
+      );
     }
   }
-
 }

@@ -1,10 +1,10 @@
 export class Skill {
-  id: number;
+  id?: number;
   nombreSkill: string;
-  progresoSkill: number;
+  progreso: number;
 
-  constructor(nombreSkill: string, progresoSkill: number) {
+  constructor(nombreSkill:string, progreso:number) {
     this.nombreSkill = nombreSkill;
-    this.progresoSkill = progresoSkill;
+    this.progreso = progreso;
   }
 }

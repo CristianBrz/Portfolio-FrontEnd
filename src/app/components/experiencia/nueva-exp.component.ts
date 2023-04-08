@@ -18,8 +18,7 @@ export class NuevaExpComponent implements OnInit {
 
   constructor(private experienciaServ: ExperienciaServService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onCreate(): void {
     const exp = new Experiencia(

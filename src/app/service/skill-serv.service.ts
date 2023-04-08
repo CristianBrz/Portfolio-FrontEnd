@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Educacion } from '../model/educacion';
 import { Skill } from '../model/skill';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SkillServService {
+  
   skillURL = 'http://localhost:8080/skill/'
 
   constructor(private httpClient: HttpClient) { }
@@ -21,7 +21,7 @@ export class SkillServService {
   }
 
   public save(skill: Skill): Observable<any>{
-    return this.httpClient.post<any>(this.skillURL + `create`, skill);
+    return this.httpClient.post<any>(this.skillURL + 'create', skill);
   }
 
   public update(id: number, skill: Skill): Observable<any>{

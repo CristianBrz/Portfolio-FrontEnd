@@ -11,7 +11,7 @@ export class Educacion {
         this.lugarEdu = lugarEdu;
         this.fechaEdu = fechaEdu;
         this.descripcionEdu = descripcionEdu;
-        this.imgEdu;
+        this.imgEdu = imgEdu;
         
     }
 }

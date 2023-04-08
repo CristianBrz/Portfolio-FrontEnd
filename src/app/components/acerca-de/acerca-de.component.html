@@ -1,22 +1,34 @@
-<div class="card m-5 mt-0">
+<div class="card m-5 mt-0" *ngFor="let persona of persona">
   <div class="ps-3">
     <img
-      src="../../../assets/Perfil.jpeg"
+      src="{{ persona.imgPerfil }}"
       alt="foto de perfil"
-      width="100"
-      class=" border border-secondary b-2 rounded-circle"
-      id="fotodeperfil"
+      class="border rounded-circle"
     />
   </div>
 
   <div class="card-body pt-5 mt-4">
-    <h4 class="card-title">{{persona.nombre}} {{persona.apellido}}</h4>
+    <div class="d-flex justify-content-between">
+      <h3 class="card-title">
+        {{ persona.nombre }} {{ persona.apellido }}
+      </h3>
+      <button
+        *ngIf="isLogged"
+        type="button"
+        class="btn btn-outline-success mx-3"
+        routerLink="/editacercade/{{ persona.id }}"
+      >
+        <abbr title="Editar"><i class="bi bi-pencil-square px-1"></i></abbr>
+      </button>
+    </div>
+
     <h5 class="card-subtitle mb-2 text-muted pb-3">
-      {{persona.titulo}}
+      {{ persona.titulo }}
     </h5>
     <!-- <h6 class="card-subtitle mb-2 text-muted">Acerca de mi</h6> -->
 
     <p class="card-text pb-3">
-      {{persona.descripcion}}
+      {{ persona.descripcion }}
     </p>
+  </div>
 </div>

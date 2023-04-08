@@ -9,18 +9,17 @@ import { SkillServService } from 'src/app/service/skill-serv.service';
   styleUrls: ['./nueva-skill.component.css'],
 })
 export class NuevaSkillComponent implements OnInit {
-  nombreSkill: string;
-  progresoSkill: number;
+  nombreSkill: string = '';
+  progreso: number;
 
   constructor(private skillService: SkillServService, private router: Router) {}
 
   ngOnInit(): void {}
 
   onCreate(): void {
-    const skill = new Skill(this.nombreSkill, this.progresoSkill);
+    const skill = new Skill(this.nombreSkill, this.progreso);
 
-    this.skillService.save(skill).subscribe(
-      (data) => {
+    this.skillService.save(skill).subscribe((data) => {
         alert('Skill añadida');
         this.router.navigate(['']);
       },
@@ -30,4 +29,4 @@ export class NuevaSkillComponent implements OnInit {
       }
     );
   }
-}
+};

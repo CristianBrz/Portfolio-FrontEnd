@@ -33,6 +33,7 @@ export class EditarSkillComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.update(id, this.skill).subscribe(
       data => {
+        alert('Skill editada');
         this.router.navigate(['']);
       }, err => {
         alert("Error al modificar Skill");

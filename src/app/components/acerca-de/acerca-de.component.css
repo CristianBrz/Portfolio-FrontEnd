@@ -1,6 +1,6 @@
-@media (min-width: 0px) {
-    #fotodeperfil{
-        position: absolute;
-        top: -50px;
-    }
+img {
+  position: absolute;
+  top: -75px;
+  left: 25px;
+  width: 130px;
 }
