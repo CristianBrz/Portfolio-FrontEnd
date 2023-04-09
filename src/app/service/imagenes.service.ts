@@ -19,10 +19,9 @@ export class ImagenesService {
   }
   
 
-  public async uploadImage($event: any, name: string) {
+  public uploadImage($event: any, name: string) {
     const file = $event.target.files[0];
     const imgRef = ref(this.storage, `img/` + name);
-
 
     console.log(imgRef);
 
