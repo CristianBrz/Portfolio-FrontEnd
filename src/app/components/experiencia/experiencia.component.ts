@@ -33,16 +33,16 @@ export class ExperienciaComponent implements OnInit {
     });
   }
 
-  delete(id?: number){
-    if(id != undefined){
+  delete(id?: number) {
+    if (id != undefined) {
       this.experienciaServ.delete(id).subscribe(
-        data => {
+        (data) => {
           this.cargarExperiencia();
-        }, err => {
-          alert("No se pudo borrar la experiencia");
+        },
+        (err) => {
+          alert('No se pudo borrar la experiencia');
         }
-      )
+      );
     }
   }
-
 }

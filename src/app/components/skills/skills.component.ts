@@ -30,7 +30,7 @@ export class SkillsComponent implements OnInit {
   cargarSkills(): void {
     this.skillService.lista().subscribe((data) => {
       this.skill = data;
-      console.log(this.skill);
+      // console.log(this.skill);
     });
   }
 

@@ -57,6 +57,25 @@
         placeholder="Desciption de tareas realizadas"
       ></textarea>
     </div>
+    
+        <!-- Imagen -->
+
+    <div class="mb-3">
+      <label for="imgPerfil" class="form-label">Logo de la empresa</label>
+      <input
+        type="file"
+        class="form-control"
+        id="imgPerfil"
+        name="imgPerfil"
+        [(ngModel)]="imgExp"
+        required
+        accept="image/*"
+        (change)="uploadImage($event)"
+      />
+    </div>
+
+
+
 
     <button type="submit" class="btn btn-success">Agregar experiencia</button>
   </form>

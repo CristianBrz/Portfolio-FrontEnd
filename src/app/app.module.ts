@@ -61,9 +61,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())
   ],
-  providers: [
-    interceptorProvider
-  ],
-  bootstrap: [AppComponent]
+  providers: [interceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
