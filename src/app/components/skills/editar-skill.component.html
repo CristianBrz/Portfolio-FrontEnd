@@ -30,6 +30,22 @@
       />
     </div>
 
+    <!-- Imagen -->
+
+    <div class="mb-3">
+      <label for="imgEdu" class="form-label">Imagen Skill</label>
+      <input
+        type="file"
+        class="form-control"
+        id="imgEdu"
+        name="imgEdu"
+        [(ngModel)]="skill.imgSkill"
+        required
+        accept="image/*"
+        (change)="uploadImage($event)"
+      />
+    </div>
+
     <button type="submit" class="btn btn-success">Actualizar Skill</button>
   </form>
 </div>

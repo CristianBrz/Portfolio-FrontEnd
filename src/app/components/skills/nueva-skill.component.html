@@ -29,6 +29,20 @@
       />
     </div>
 
+        <div class="mb-3">
+      <label for="imgPerfil" class="form-label">Imagen Skill</label>
+      <input
+        type="file"
+        class="form-control"
+        id="imgPerfil"
+        name="imgPerfil"
+        [(ngModel)]="imgSkill"
+        required
+        accept="image/*"
+        (change)="uploadImage($event)"
+      />
+    </div>
+
     <button type="submit" class="btn btn-success">Agregar Skill</button>
   </form>
 </div>

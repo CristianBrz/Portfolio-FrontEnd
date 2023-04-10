@@ -37,6 +37,7 @@ export class EditExperienciaComponent implements OnInit {
     this.expLab.imgExp = this.imageService.url;
     this.experienciaServ.update(id, this.expLab).subscribe(
       (data) => {
+        alert('Experiencia editada');
         this.router.navigate(['']);
       },
       (err) => {
