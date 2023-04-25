@@ -1,0 +1,83 @@
+<div class="m-5"  *ngIf="proyecto">
+  <h1>Nuevo Proyecto</h1>
+
+  <form (ngSubmit)="onUpdate()" novalidate #form="ngForm">
+    
+    <!-- Proyecto -->
+    <div class="mb-3">
+      <label for="nombreProy" class="form-label">Proyecto</label>
+      <input
+        type="text"
+        class="form-control "
+        id="nombreProy"
+        name="nombreProy"
+        [(ngModel)]="proyecto.nombreProy"
+        required
+        placeholder="Nombre del proyecto"
+      />
+    </div>
+
+    <!-- Tipo -->
+    <div class="mb-3">
+      <label for="tipoProy" class="form-label">Tipo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="tipoProy"
+        name="tipoProy"
+        [(ngModel)]="proyecto.tipoProy"
+        required
+        placeholder="Proyecto de estudio / Personal"
+      />
+    </div>
+
+    <!-- descripcion -->
+
+    <div class="mb-3">
+      <label for="descripcionProy" class="form-label">Descipcion</label>
+      <textarea
+        class="form-control"
+        id="descripcionExp"
+        name="descripcionExp"
+        [(ngModel)]="proyecto.descripcionProy"
+        required
+        rows="3"
+        placeholder="Desciption delproyecto"
+      ></textarea>
+    </div>
+    
+
+    <!-- URL -->
+
+    <div class="mb-3">
+      <label for="urlProy" class="form-label">URL del proyecto</label>
+      <input
+        class="form-control"
+        id="urlProy"
+        name="urlProy"
+        [(ngModel)]="proyecto.urlProy"
+        required
+        rows="3"
+        placeholder="https://..."
+      >
+    </div>
+    
+        <!-- Imagen -->
+
+    <div class="mb-3">
+      <label for="imgProy" class="form-label">Imagen del proyecto</label>
+      <input
+        type="file"
+        class="form-control"
+        id="imgProy"
+        name="imgProy"
+        [(ngModel)]="proyecto.imgProy"
+        required
+        accept="image/*"
+        (change)="uploadImage($event)"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success">Editar Proyecto</button>
+  </form>
+</div>
