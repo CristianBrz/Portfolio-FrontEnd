@@ -4,31 +4,31 @@ import { Observable } from 'rxjs';
 import { Skill } from '../model/skill';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SkillServService {
   
-  skillURL = 'http://localhost:8080/skill/'
+  skillURL = 'https://backendportfolio-nq37.onrender.com/skill/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  public lista(): Observable<Skill[]>{
+  public lista(): Observable<Skill[]> {
     return this.httpClient.get<Skill[]>(this.skillURL + 'lista');
   }
 
-  public detail(id: number): Observable<Skill>{
+  public detail(id: number): Observable<Skill> {
     return this.httpClient.get<Skill>(this.skillURL + `detail/${id}`);
   }
 
-  public save(skill: Skill): Observable<any>{
+  public save(skill: Skill): Observable<any> {
     return this.httpClient.post<any>(this.skillURL + 'create', skill);
   }
 
-  public update(id: number, skill: Skill): Observable<any>{
+  public update(id: number, skill: Skill): Observable<any> {
     return this.httpClient.put<any>(this.skillURL + `update/${id}`, skill);
   }
 
-  public delete(id: number): Observable<any>{
+  public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.skillURL + `delete/${id}`);
   }
 }

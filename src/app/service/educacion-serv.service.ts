@@ -4,32 +4,30 @@ import { Observable } from 'rxjs';
 import { Educacion } from '../model/educacion';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EducacionServService {
-  eduURL = 'http://localhost:8080/educacion/'
-  
-  constructor(private httpClient: HttpClient) { }
+  eduURL = 'https://backendportfolio-nq37.onrender.com/educacion/';
 
-  public lista(): Observable<Educacion[]>{
+  constructor(private httpClient: HttpClient) {}
+
+  public lista(): Observable<Educacion[]> {
     return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');
   }
 
-  public detail(id: number): Observable<Educacion>{
+  public detail(id: number): Observable<Educacion> {
     return this.httpClient.get<Educacion>(this.eduURL + `detail/${id}`);
   }
 
-  public save(educacion: Educacion): Observable<any>{
+  public save(educacion: Educacion): Observable<any> {
     return this.httpClient.post<any>(this.eduURL + `create`, educacion);
   }
 
-  public update(id: number, educacion: Educacion): Observable<any>{
+  public update(id: number, educacion: Educacion): Observable<any> {
     return this.httpClient.put<any>(this.eduURL + `update/${id}`, educacion);
   }
 
-  public delete(id: number): Observable<any>{
+  public delete(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.eduURL + `delete/${id}`);
   }
-
-
 }

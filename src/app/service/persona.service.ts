@@ -7,8 +7,7 @@ import { Persona } from '../model/persona.model';
   providedIn: 'root',
 })
 export class PersonaService {
-  
-  personaURL = 'http://localhost:8080/persona/'
+  personaURL = 'https://backendportfolio-nq37.onrender.com/persona/';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -23,7 +22,6 @@ export class PersonaService {
   public update(id: number, persona: Persona): Observable<any> {
     return this.httpClient.put<any>(this.personaURL + `update/${id}`, persona);
   }
-
 
   //Agregar multi ususario
   // public save(persona: Persona): Observable<any> {
