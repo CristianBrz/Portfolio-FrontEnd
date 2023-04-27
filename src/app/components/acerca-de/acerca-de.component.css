@@ -8,3 +8,7 @@ img {
 button{
   height: 40px;
 }
+
+div{
+	--bs-bg-opacity: .2;
+}

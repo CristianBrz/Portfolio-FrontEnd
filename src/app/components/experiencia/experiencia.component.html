@@ -1,6 +1,6 @@
-<div class="container">
-  <div>
-    <div class="row p-3">
+<div class="container my-5">
+  <div class="">
+    <div class="row p-3 bg">
       <h4 class="col-md-10 col-12 pt-3"><u>Experiencia laboral</u></h4>
       <button
         type="button"
@@ -13,13 +13,13 @@
     </div>
   </div>
 
-  <div class="card mb-3" *ngFor="let Experiencia of exp">
+  <div class="card mb-3 bg-success" *ngFor="let Experiencia of exp">
     <div class="row g-0">
       <div class="col-12 col-md-3 d-flex justify-content-center">
         <img
           src="{{ Experiencia.imgExp }}"
-          class="img-fluid rounded-start"
-          alt="..."
+          class="img-fluid"
+          alt="logo {{ Experiencia.lugarExp }}"
         />
         <!-- <p>{{ Experiencia.imgExp }}</p> -->
       </div>

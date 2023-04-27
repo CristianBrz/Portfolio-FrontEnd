@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-5">
   <div>
     <div class="row p-3">
       <h4 class="col-md-10 col-12 pt-3"><u>Skills</u></h4>
@@ -15,56 +15,58 @@
 
   <!-- cards skills -->
 
-  <div class="row row-cols-sm-3 row-cols-md-4 row-cols-xl-6 g-2">
-    <div class="col text-center" *ngFor="let skill of skill">
-      <div class="h-100">
-        <abbr title="{{ skill.nombreSkill }}">
-          <circle-progress
-            [percent]="skill.progreso"
-            [maxPercent]="100"
-            [radius]="70"
-            [imageSrc]="skill.imgSkill"
-            [title]="skill.nombreSkill"
-            [titleColor]="'#212F3C'"
-            [showTitle]="true"
-            [showImage]="true"
-            [imageHeight]="65"
-            [imageWidth]="65"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="10"
-            [innerStrokeWidth]="2"
-            [outerStrokeGradient]="true"
-            [outerStrokeColor]="'#ff0000'"
-            [outerStrokeGradientStopColor]="'#5f2b2b'"
-            [innerStrokeColor]="'#000000'"
-            [animation]="true"
-            [animationDuration]="800"
-          >
-          </circle-progress
-        ></abbr>
-        <div class="d-flex justify-content-center">
-          <div
-            class="btn-group btn-group-sm"
-            role="group"
-            aria-label="Basic outlined example"
-            *ngIf="isLogged"
-          >
-            <button
-              type="button"
-              class="btn btn-outline-success"
-              routerLink="/editskill/{{ skill.id }}"
+  <div class="card bg-success">
+    <div class="row row-cols-sm-3 row-cols-md-4 row-cols-xl-6 g-2 my-2">
+      <div class="col text-center" *ngFor="let skill of skill">
+        <div class="h-100">
+          <abbr title="{{ skill.nombreSkill }}">
+            <circle-progress
+              [percent]="skill.progreso"
+              [maxPercent]="100"
+              [radius]="70"
+              [imageSrc]="skill.imgSkill"
+              [title]="skill.nombreSkill"
+              [titleColor]="'#212F3C'"
+              [showTitle]="true"
+              [showImage]="true"
+              [imageHeight]="65"
+              [imageWidth]="65"
+              [showUnits]="false"
+              [showSubtitle]="false"
+              [outerStrokeWidth]="10"
+              [innerStrokeWidth]="2"
+              [outerStrokeGradient]="true"
+              [outerStrokeColor]="'#ff0000'"
+              [outerStrokeGradientStopColor]="'#5f2b2b'"
+              [innerStrokeColor]="'#000000'"
+              [animation]="true"
+              [animationDuration]="800"
             >
-              <abbr title="Editar"><i class="bi bi-pencil-square"></i></abbr>
-            </button>
+            </circle-progress
+          ></abbr>
+          <div class="d-flex justify-content-center">
+            <div
+              class="btn-group btn-group-sm"
+              role="group"
+              aria-label="Basic outlined example"
+              *ngIf="isLogged"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-success"
+                routerLink="/editskill/{{ skill.id }}"
+              >
+                <abbr title="Editar"><i class="bi bi-pencil-square"></i></abbr>
+              </button>
 
-            <button
-              type="button"
-              class="btn btn-outline-danger"
-              (click)="delete(skill.id)"
-            >
-              <abbr title="Borrar"><i class="bi bi-x-square"></i></abbr>
-            </button>
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                (click)="delete(skill.id)"
+              >
+                <abbr title="Borrar"><i class="bi bi-x-square"></i></abbr>
+              </button>
+            </div>
           </div>
         </div>
       </div>

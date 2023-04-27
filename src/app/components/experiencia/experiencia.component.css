@@ -3,3 +3,7 @@ img{
 	width: 150px;
 	height: 150px;
 }
+
+div{
+	--bs-bg-opacity: .2;
+}
